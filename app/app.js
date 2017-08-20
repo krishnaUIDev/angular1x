@@ -27,7 +27,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
                 templateUrl: 'template/home.html'
             })
             .when('/pricing',{
-                templateUrl: 'template/pricing/pricing.html'
+                templateUrl: 'template/pricing.html'
             })
             .when('/Education',{
                 templateUrl: 'template/education/education.html'
