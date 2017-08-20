@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Cyberdude</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="Styles/home.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+<style>
+
+
+
+</style>
+
+
+</head>
+  <body>
+  <!--navigation start
+     <nav class="navbar navbar-inverse navbar-main">
+       <div class="container">
+          Brand and toggle get grouped for better mobile display
+         <div class="navbar-header">
+           <a class="navbar-brand visible-xs" href="#">Logo</a>
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+             <span class="sr-only">Toggle navigation</span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+           </button>
+         </div>
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+             <li class="active"><a href="#!/home">Home <span class="sr-only">(current)</span></a></li>
+             <li><a href="#!/about">About Us</a></li>
+             <li><a href="#!/WEBDESIGN">Web Design</a></li>
+
+           </ul>
+           <div class="navbar-brand hidden-xs">
+             <a class="white-circle" href="http://www.blogherald.com/wp-content/uploads/2015/09/anonymous-logo-transparent-wallpaper-4.jpg.png">
+               <img class="logo" src="http://www.blogherald.com/wp-content/uploads/2015/09/anonymous-logo-transparent-wallpaper-4.jpg.png" alt="Logo">
+             </a>
+           </div>
+           <ul class="nav navbar-nav navbar-right">
+             <li><a href="#!/portfolio">Portfolio</a></li>
+             <li><a href="#!/SEO">SEO</a></li>
+             <li><a href="#!/development">development</a></li>
+             <li><a href="#!/contact">Contact</a></li>
+           </ul>
+         </div> /.navbar-collapse
+       </div> /.container-fluid
+     </nav>
+  navigation end
+   carosel start
+  <main>
+
+    <div id="carousel">
+
+      <div class="hideLeft">
+        <img src="http://images.all-free-download.com/images/graphicthumb/web_design_elements_concept_design_with_horizontal_banners_6825572.jpg">
+      </div>
+
+      <div class="prevLeftSecond">
+        <img src="https://image.freepik.com/free-vector/web-design-tools_23-2147502078.jpg">
+      </div>
+
+      <div class="prev">
+        <img src="http://www.webtechelp.net/wp-content/uploads/2014/08/Voyage.jpg">
+      </div>
+
+      <div class="selected">
+        <img src="https://inspirationhut.net/wp-content/uploads/2013/08/Premium-Ecommerce-Website-Template-PSD-for-Free-Download-cssauthor.com_.jpg">
+      </div>
+
+      <div class="next">
+        <img src="http://www.webtechelp.net/wp-content/uploads/2014/05/Mail-Mate-A-Free-Website-PSD-Design.jpg">
+      </div>
+
+      <div class="nextRightSecond">
+        <img src="
+https://image.freepik.com/free-vector/web-development-and-design_23-2147508519.jpg">
+      </div>
+
+      <div class="hideRight">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/106/147/non_2x/free-vector-web-design-elements.jpg">
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="prev" class="previous ok">&laquo;Prev</button>
+      <button id="next" class="next ok">Next&raquo;</button>
+    </div>
+
+
+  </main>
+  carosel end-->
+
+
+  <div ng-view></div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="app.js"></script>
+
+
+
+  <script>
+      function moveToSelected(element) {
+
+          if (element == "next") {
+              var selected = $(".selected").next();
+          } else if (element == "prev") {
+              var selected = $(".selected").prev();
+          } else {
+              var selected = element;
+          }
+
+          var next = $(selected).next();
+          var prev = $(selected).prev();
+          var prevSecond = $(prev).prev();
+          var nextSecond = $(next).next();
+
+          $(selected).removeClass().addClass("selected");
+
+          $(prev).removeClass().addClass("prev");
+          $(next).removeClass().addClass("next");
+
+          $(nextSecond).removeClass().addClass("nextRightSecond");
+          $(prevSecond).removeClass().addClass("prevLeftSecond");
+
+          $(nextSecond).nextAll().removeClass().addClass('hideRight');
+          $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+
+      }
+
+      // Eventos teclado
+      $(document).keydown(function(e) {
+          switch(e.which) {
+              case 37: // left
+                  moveToSelected('prev');
+                  break;
+
+              case 39: // right
+                  moveToSelected('next');
+                  break;
+
+              default: return;
+          }
+          e.preventDefault();
+      });
+
+      $('#carousel div').click(function() {
+          moveToSelected($(this));
+      });
+
+      $('#prev').click(function() {
+          moveToSelected('prev');
+      });
+
+      $('#next').click(function() {
+          moveToSelected('next');
+      });
+
+  </script>
+
+  </body>
+</html>
