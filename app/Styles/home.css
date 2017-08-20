@@ -205,8 +205,8 @@ ul, ol {
 
 .mun{
     background: linear-gradient(45deg,#33b1f8 37%,#6e90f6 100%);
-   /* background-size: 100% 100%;
-    background-repeat: no-repeat;*/
+    background-size: 100% 100%;
+   /* background-repeat: no-repeat;*!*/
     /* first image is 300x100, second image covers the whole area */
 }
 /*header*/
@@ -229,7 +229,9 @@ line-height: 33px;
 }
 .bull a{
     font-size: 14px;
-    color: #FFFFFF;
+
+    color: white;
+
 }
 #chan{
     background: rgba(255,255,255,.16);
