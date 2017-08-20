@@ -20,26 +20,30 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
     function AppConfig($routeProvider) {
         $routeProvider
-            .when('/about',{
-                templateUrl: 'template/about/about.html'
+            .when('/Features',{
+                templateUrl: 'template/Feature/Feature.html'
             })
             .when('/home',{
                 templateUrl: 'template/home.html'
             })
-            .when('/contact',{
-                templateUrl: 'template/contact/contact.html'
+            .when('/pricing',{
+                templateUrl: 'template/pricing/pricing.html'
             })
-            .when('/development',{
-                templateUrl: 'template/Development/development.html'
+            .when('/Education',{
+                templateUrl: 'template/education/education.html'
             })
-            .when('/portfolio',{
-                templateUrl: 'template/portfolio/portfolio.html'
+            .when('/popular',{
+                templateUrl: 'template/popular/popular.html'
             })
-            .when('/SEO',{
-                templateUrl: 'template/seo/seo.html'
+            .when('/blog',{
+                templateUrl: 'template/blog/blog.html'
             })
-            .when('/WEBDESIGN',{
-                templateUrl: 'template/webdesign/webdesign.html'
+            .when('/Login',{
+                templateUrl: 'template/Credentials/Login.html'
+            })
+            .when('/Signup',
+                {
+                templateUrl: 'template/Credentials/Signup.html'
             })
 
             .otherwise('/home');
